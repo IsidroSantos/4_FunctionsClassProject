@@ -15,7 +15,7 @@ typedef enum
 
 
 /*Here is where all functions are declared*/
-void vPrintAddOperation(void);
+void vPrintAddOperation(uint8 u8ArgX, uint8 u8ArgY);
 
 void vPrintSubstractOperation(void);
 
@@ -40,7 +40,7 @@ int main()
     /*Here we are evaluating which operation is required*/
     if (enAddOperation == enOperationSelected) /*The add operation will be executed*/
     {
-        vPrintAddOperation();
+        vPrintAddOperation(u8Number1, u8Number2);
     }
     else if (enSubstractOperation == enOperationSelected) /*The Substract operation will be executed*/
     {
@@ -64,9 +64,11 @@ int main()
 
 
 /*Here is where all functions are implemented*/
-void vPrintAddOperation(void)
+void vPrintAddOperation(uint8 u8ArgX, uint8 u8ArgY)
 {
-    printf("Add operation selected");
+    int iResult = u8ArgX + u8ArgY;
+    printf("Add operation selected\n");
+    printf("The result is: %d\n",iResult);
 }
 void vPrintSubstractOperation(void)
 {
