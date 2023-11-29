@@ -26,6 +26,8 @@ void vPrintDivideOperation(void);
 void vPrintInvalidOperation(void);
 
 
+enOperations enGetSelectedOperation(void);
+
 
 
 
@@ -35,7 +37,7 @@ int main()
     uint8 u8Number1 = 3; /*First number value to be process is defined*/
     uint8 u8Number2 = 1; /*Second number value to be process is defined*/
     int iResult = 0; /*this variable will handle the operation result*/
-    enOperations enOperationSelected = enAddOperation; /*The required operation is requested*/
+    enOperations enOperationSelected = enGetSelectedOperation(); /*The required operation is requested*/
 
 
     /*Here we are evaluating which operation is required*/
@@ -90,5 +92,11 @@ void vPrintDivideOperation(void)
 void vPrintInvalidOperation(void)
 {
     printf("Invalid operation selected");
+}
+
+
+enOperations enGetSelectedOperation(void)
+{
+    return enAddOperation;
 }
 
